@@ -3,7 +3,7 @@ package com.kiheyunkim.chatbot.config;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class SpringWebApplicationInitializer 
-	extends AbstractAnnotationConfigDispatcherServletInitializer{
+		extends AbstractAnnotationConfigDispatcherServletInitializer{
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {

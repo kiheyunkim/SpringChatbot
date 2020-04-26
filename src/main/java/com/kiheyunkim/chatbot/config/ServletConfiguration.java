@@ -14,8 +14,7 @@ public class ServletConfiguration implements ServletContainerInitializer{
 
 	@Override
 	public void onStartup(Set<Class<?>> c, ServletContext ctx) throws ServletException {
-		AnnotationConfigWebApplicationContext applicationContext =
-				new AnnotationConfigWebApplicationContext();
+		AnnotationConfigWebApplicationContext applicationContext = new AnnotationConfigWebApplicationContext();
 		applicationContext.register(SpringConfiguration.class);
 		
 		DispatcherServlet dispatcherServlet = new DispatcherServlet(applicationContext);
