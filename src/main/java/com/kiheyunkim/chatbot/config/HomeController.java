@@ -1,4 +1,4 @@
-package com.kiheyunkim.chatbot;
+package com.kiheyunkim.chatbot.config;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class HomeController {
-	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,6 +40,16 @@ public class MessageController {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("result",isSuccess ? "등록에 성공하였습니다" : "등록에 실패하였습니다");			
+		
+		return result;
+	}
+	
+	@GetMapping(value="/hi",params="test")
+	@ResponseBody
+	public Map<String, Object> Hi(@RequestParam("test")String test) {
+		System.out.println("hi");
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("result",test);			
 		
 		return result;
 	}
