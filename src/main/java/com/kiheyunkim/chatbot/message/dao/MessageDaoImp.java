@@ -1,13 +1,13 @@
 package com.kiheyunkim.chatbot.message.dao;
 
-import javax.transaction.Transactional;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import com.kiheyunkim.chatbot.message.model.Message;
 
+@Repository
 public class MessageDaoImp implements MessageDao{
 
 	private final SessionFactory sessionFactory;
