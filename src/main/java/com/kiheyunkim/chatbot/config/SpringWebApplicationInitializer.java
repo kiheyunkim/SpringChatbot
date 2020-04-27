@@ -20,7 +20,7 @@ public class SpringWebApplicationInitializer
 	@Override
 	protected String[] getServletMappings() {
 		// TODO Auto-generated method stub
-		return new String[] {"/", "/*.html"};
+		return new String[] {"/"};
 	}
 
 }

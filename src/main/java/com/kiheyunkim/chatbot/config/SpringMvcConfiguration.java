@@ -7,12 +7,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-public class SpringMvcConfiguration implements WebMvcConfigurer{
-
+public class SpringMvcConfiguration implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/**")
-        .addResourceLocations("/public", "classpath:/static/")
-        .setCachePeriod(31556926);
+		registry.addResourceHandler("/css/**").addResourceLocations("classpath:/public/css/");
+		registry.addResourceHandler("/js/**").addResourceLocations("classpath:/public/js/");
+		registry.addResourceHandler("/img/**").addResourceLocations("classpath:/public/img/");
 	}
 }
