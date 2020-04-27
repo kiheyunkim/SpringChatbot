@@ -9,6 +9,12 @@ import org.hibernate.dialect.MySQL5Dialect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.Thymeleaf;
+import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 import com.kiheyunkim.chatbot.message.dao.MessageDao;
 import com.kiheyunkim.chatbot.message.dao.MessageDaoImp;
@@ -24,6 +30,15 @@ public class ChatbotBeanConfiguration {
 	}
 	
 	@Bean
+	public InternalResourceViewResolver viewResolver() {
+		InternalResourceViewResolver viewResolver = 
+				new InternalResourceViewResolver();
+		viewResolver.setPrefix("/WEB-INF/");
+		viewResolver.setSuffix(".html");
+		return viewResolver;
+	}
+	
+	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
 		localSessionFactoryBean.setHibernateProperties(hibernateProperties());
@@ -35,10 +50,10 @@ public class ChatbotBeanConfiguration {
 	public DataSource dataSource() {
 		HikariDataSource datasource = new HikariDataSource();
 		datasource.setUsername("root");
-		datasource.setPassword("-----");
+		datasource.setPassword("toor");
 		datasource.setJdbcUrl("jdbc:mysql://localhost:3306/chatbotMsg?characterEncoding=UTF-8&serverTimezone=UTC");
 		datasource.setDriverClassName(com.mysql.cj.jdbc.Driver.class.getName());
-		
+		datasource.setMaximumPoolSize(200);
 		return datasource;
 	}
 	
