@@ -53,6 +53,7 @@ public class ChatbotBeanConfiguration {
 		datasource.setPassword("toor");
 		datasource.setJdbcUrl("jdbc:mysql://localhost:3306/chatbotMsg?characterEncoding=UTF-8&serverTimezone=UTC");
 		datasource.setDriverClassName(com.mysql.cj.jdbc.Driver.class.getName());
+		datasource.setMaximumPoolSize(200);
 		return datasource;
 	}
 	
