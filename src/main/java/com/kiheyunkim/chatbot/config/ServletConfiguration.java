@@ -21,5 +21,10 @@ public class ServletConfiguration implements ServletContainerInitializer{
 		ServletRegistration.Dynamic servlet = ctx.addServlet("main", dispatcherServlet);
 		servlet.setLoadOnStartup(1);
 		servlet.addMapping("/");
+		
+		DispatcherServlet dispatcherServlet2 = new DispatcherServlet(applicationContext);
+		ServletRegistration.Dynamic servlet2 = ctx.addServlet("main2", dispatcherServlet2);
+		servlet2.setLoadOnStartup(2);
+		servlet2.addMapping("/*.html");
 	}
 }
