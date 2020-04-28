@@ -10,8 +10,11 @@ let AdjustCaretPoint =()=>{
       }
   }
 
-let AddMessage = (message)=>{
+let AddMessage = (message,isMe)=>{
   let newDiv = document.createElement('div');
+  if(isMe){
+    newDiv.setAttribute('id','you');
+  }
   newDiv.innerHTML = message;
   messages.appendChild(newDiv);
   AdjustCaretPoint();
@@ -27,8 +30,7 @@ SendMessage = (msg, data) => {
   
   xhr.addEventListener('load', function(){   // 데이터 수신에 대한 결과 출력
     let result = JSON.parse(xhr.responseText);
-    console.log(xhr);
-    AddMessage(`<div class = 'botMessage'>  ${result['result']} </div>`);
+    AddMessage(`<div class = 'botMessage'>  ${result['result']} </div>`,false);
   });
 }
 
@@ -39,16 +41,17 @@ $(document).ready(()=>{
     inputArea = document.querySelector('input');
     $(inputArea).focus();
 
-    sendbutton.addEventListener('click', function(){
+    sendbutton.addEventListener('click', ()=>{
         //버튼 id messageSend에 click 등록 및 그에 따른 반응 등록
-        let inputdata =inputArea.value;
-        AddMessage(`<div class = 'youMessage'>   ${inputArea.value} </div>`);
+        let inputdata = inputArea.value;
+        AddMessage(`<div class = 'youMessage'>   ${inputArea.value} </div>`,true);
         inputArea.value='';
         SendMessage('./message/get', inputdata);
       });
 
       $(document).keyup((event)=>{
-        if(event.keyCode === '13'){
+       console.log(event.keyCode);
+        if(event.keyCode === 13){
           let inputArea = document.querySelector('input');
           $(inputArea).focus();
           $(sendbutton).click();

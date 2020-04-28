@@ -50,10 +50,10 @@ public class ChatbotBeanConfiguration {
 	public DataSource dataSource() {
 		HikariDataSource datasource = new HikariDataSource();
 		datasource.setUsername("root");
-		datasource.setPassword("toor");
+		datasource.setPassword("------");
 		datasource.setJdbcUrl("jdbc:mysql://localhost:3306/chatbotMsg?characterEncoding=UTF-8&serverTimezone=UTC");
 		datasource.setDriverClassName(com.mysql.cj.jdbc.Driver.class.getName());
-		datasource.setMaximumPoolSize(50);
+		datasource.setMaximumPoolSize(10);
 		datasource.setMaxLifetime(30000);
 		return datasource;
 	}
