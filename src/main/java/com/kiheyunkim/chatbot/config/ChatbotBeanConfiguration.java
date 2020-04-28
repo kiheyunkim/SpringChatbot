@@ -37,7 +37,7 @@ public class ChatbotBeanConfiguration {
 		viewResolver.setSuffix(".html");
 		return viewResolver;
 	}
-	
+		
 	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
@@ -54,6 +54,7 @@ public class ChatbotBeanConfiguration {
 		datasource.setJdbcUrl("jdbc:mysql://localhost:3306/chatbotMsg?characterEncoding=UTF-8&serverTimezone=UTC");
 		datasource.setDriverClassName(com.mysql.cj.jdbc.Driver.class.getName());
 		datasource.setMaximumPoolSize(50);
+		datasource.setMaxLifetime(30000);
 		return datasource;
 	}
 	
