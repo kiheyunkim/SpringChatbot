@@ -1,10 +1,10 @@
 html{
-/*  ÆÄÀÌ¾îÆø½º scrollber */
+/*  íŒŒì´ì–´í­ìŠ¤ scrollber */
   scrollbar-width: thin;
   scrollbar-color: rgba(101, 190, 230, 0.3) transparent;
 }
 
-/*  À¥Å¶(Å©·Ò, »çÆÄ¸®) scrollber */
+/*  ì›¹í‚·(í¬ë¡¬, ì‚¬íŒŒë¦¬) scrollber */
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -15,7 +15,7 @@ html{
   border-radius: 8px;
   background-color: rgba(101, 190, 230, 0.3);
 }
-/*  À¥Å¶(Å©·Ò, »çÆÄ¸®) button outline Á¦°Å */
+/*  ì›¹í‚·(í¬ë¡¬, ì‚¬íŒŒë¦¬) button outline ì œê±° */
 textarea:focus {
   outline: none; 
 } 
@@ -26,7 +26,7 @@ input:focus {
   outline: none; 
 }
 
-/* °øÅë ¿µ¿ª */
+/* ê³µí†µ ì˜ì—­ */
 body{
   max-width: 768px;
   margin: 0 auto;
@@ -35,7 +35,7 @@ body{
   box-sizing: border-box;
 }
 
-/* ´ëÈ­ ¿µ¿ª */
+/* ëŒ€í™” ì˜ì—­ */
 #box{
   max-width: calc(768px - 2em);
   margin: 0 auto;
@@ -52,8 +52,8 @@ body{
   background-color: #fff;
 }
 
-/* ¸»Ç³¼± ¿µ¿ª */
-/* °øÅë ¿µ¿ª */
+/* ë§í’ì„  ì˜ì—­ */
+/* ê³µí†µ ì˜ì—­ */
 #box .chat div{
   display: flex;
   width: auto;
@@ -65,8 +65,8 @@ body{
   margin: 0.5em 0;
   word-break: break-word; 
 }
-/* ³» ¸»Ç³¼± */
-#box .chat div:nth-of-type(2n+1){
+/* ë‚´ ë§í’ì„  */
+#you{
   justify-content: flex-end;
 }
 .youMessage{
@@ -74,8 +74,9 @@ body{
   border-radius: 0.5em 0 0.5em 0.5em;
   color: #fff;
   text-align: right;
+  
 }
-/* º¿ ¸»Ç³¼± */
+/* ë´‡ ë§í’ì„  */
 .botMessage{
   left: 0;
   width: auto;
@@ -86,14 +87,14 @@ body{
 }
 
 
-/* ÄÁÆ®·Ñ ¿µ¿ª */
+/* ì»¨íŠ¸ë¡¤ ì˜ì—­ */
 .saying{
   max-width: calc(768px - 2em);
   margin: 0 auto;
   width: 100%;
   margin-top: 1em; 
 }
-/* ÀÔ·Â ¿µ¿ª */
+/* ì…ë ¥ ì˜ì—­ */
 .saying input{
   height: 3.5em;
   width: calc(100% - 4em);
@@ -105,7 +106,7 @@ body{
 .saying input::placeholder{
   color: #aaa;
 }
-/* Àü¼Û ¹öÆ° ¿µ¿ª */
+/* ì „ì†¡ ë²„íŠ¼ ì˜ì—­ */
 .saying #messageSend{
   width: 3.5em;
   height: 3.5em;

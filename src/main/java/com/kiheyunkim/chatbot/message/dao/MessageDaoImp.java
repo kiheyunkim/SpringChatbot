@@ -37,14 +37,19 @@ public class MessageDaoImp implements MessageDao{
 		Transaction tx = session.beginTransaction();
 		
 		try {
-			tx.begin();
 			Message result = session.get(Message.class, question);
 			if(result != null) {
 				throw new Exception();
-			}			
+			}
+			result = new Message();
+			result.setQuestion(question);
+			result.setMessage(answer);
+			session.persist(result);
+			
 			tx.commit();
 			return true;
 		} catch (Exception e) {
+			System.out.println(e);
 			tx.rollback();
 			return false;
 		}
