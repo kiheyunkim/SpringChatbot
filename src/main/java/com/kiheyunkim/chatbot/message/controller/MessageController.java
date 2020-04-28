@@ -30,7 +30,7 @@ public class MessageController {
 		String answer = messageDao.getAnswer(question);
 		
 		Map<String, Object> result = new HashMap<String, Object>();
-		result.put("result",answer == null ? "질문에 대한 답변이 없습니다.." : answer);			
+		result.put("result", answer == null ? "질문에 대한 답변이 없습니다.." : answer);			
 		
 		return result;
 	}
