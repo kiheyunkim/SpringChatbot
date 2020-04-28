@@ -26,6 +26,9 @@ public class MessageDaoImp implements MessageDao{
 		} catch (Exception e) {
 			return null;
 		}
+		finally {
+			session.close();
+		}
 	}
 
 	@Override
@@ -42,7 +45,11 @@ public class MessageDaoImp implements MessageDao{
 			tx.commit();
 			return true;
 		} catch (Exception e) {
+			tx.rollback();
 			return false;
+		}
+		finally {
+			session.close();
 		}
 	}
 }

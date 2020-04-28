@@ -18,7 +18,7 @@ let AddMessage = (message)=>{
 }
 
 SendMessage = (msg, data) => {
-  let jsonData = JSON.stringify({'message':data});  //Json 변환
+  let jsonData = JSON.stringify({'question':data});  //Json 변환
   
   let xhr = new XMLHttpRequest();
   xhr.open('POST', msg);
@@ -44,7 +44,7 @@ $(document).ready(()=>{
         let inputdata =inputArea.value;
         AddMessage(`<div class = 'youMessage'>   ${inputArea.value} </div>`);
         inputArea.value='';
-        SendMessage('/simplechatBot', inputdata);
+        SendMessage('./message/get', inputdata);
       });
 
       $(document).keyup((event)=>{
