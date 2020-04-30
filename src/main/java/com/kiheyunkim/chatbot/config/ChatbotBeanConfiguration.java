@@ -9,12 +9,7 @@ import org.hibernate.dialect.MySQL5Dialect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.Thymeleaf;
-import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
-import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 import com.kiheyunkim.chatbot.message.dao.MessageDao;
 import com.kiheyunkim.chatbot.message.dao.MessageDaoImp;
